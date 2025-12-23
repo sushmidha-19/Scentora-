@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar color="dark">
+
+    <!-- Logo -->
+    <img src="assets/images/Logo.png" class="header-logo" alt="Scentora Logo" />
+    <span class="brand-name">Scentora</span>
+
+    <!-- Menu Items -->
+    <ion-buttons slot="primary" class="menu-links">
+      <ion-button fill="clear" routerLink="/login">Home</ion-button>
+      <ion-button fill="clear" routerLink="/login">Products</ion-button>
+      <ion-button fill="clear" routerLink="/about">About</ion-button>
+      
+      <ion-button fill="clear" (click)="scrollToContact()">Contact</ion-button>
+
+    </ion-buttons>
+
+    <!-- Login Button -->
+    <ion-buttons slot="end">
+      <ion-button fill="outline" routerLink="/login" class="login-btn">Login</ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="front-content">
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>Elegance in Every Drop</h1>
+    <p>Your signature scent awaits.</p>
+  </div>
+
+  <!-- Bestsellers Section -->
+  <section class="best-sellers">
+    <h2 class="section-title">Bestsellers</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="3" *ngFor="let p of bestsellers">
+          <ion-card>
+            <ion-img [src]="p.image"></ion-img>
+            <ion-card-header>
+              <ion-card-title>{{ p.name }}</ion-card-title>
+              <ion-card-subtitle>₹{{ p.price }}</ion-card-subtitle>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <!-- Brand Story -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>The Essence of Our Craft</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Inspired by decades of craftsmanship, our fragrances celebrate authenticity, luxury & you.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contact Us Section (moved here) -->
+   <section id="contact" class="contact-us">
+  
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Contact Us</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>If you have questions about our products or orders, feel free to reach out!</p>
+        <p><strong>Email:</strong> support&#64;scentora.com</p>
+        <p><strong>Phone:</strong> +91 98765 43210</p>
+        <p><strong>Address:</strong> 123 Aroma Avenue, Mumbai, India</p>
+      </ion-card-content>
+    </ion-card>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 Scentora Perfumes. All rights reserved.</p>
+  </div>
+
+  <div style="height: 80px;"></div>
+</ion-content>

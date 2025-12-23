@@ -1,0 +1,254 @@
+/* Front Page Styling */
+ion-header {
+  ion-toolbar {
+    --background: #1a1a1a;
+    --color: #ffffff;
+    padding: 0 16px;
+    
+    .header-logo {
+      height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+    
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      vertical-align: middle;
+      color: #e0c9a6;
+    }
+    
+    .menu-links {
+      margin-left: 30px;
+      
+      ion-button {
+        --color: #ffffff;
+        --background-hover: rgba(255, 255, 255, 0.1);
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        margin: 0 8px;
+        text-transform: capitalize;
+        
+        &:hover {
+          --color: #e0c9a6;
+        }
+      }
+    }
+    
+    .login-btn {
+      --color: #ffffff;
+      --border-color: #e0c9a6;
+      --background-activated: rgba(224, 201, 166, 0.2);
+      --background-hover: rgba(224, 201, 166, 0.1);
+      margin-left: 15px;
+      
+      &:hover {
+        --color: #e0c9a6;
+      }
+    }
+  }
+}
+
+ion-content {
+  --background: #f9f5f0;
+  
+  .hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #3d3d3d 100%);
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      letter-spacing: 1.5px;
+    }
+    
+    p {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #333;
+    font-size: 2.2rem;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #e0c9a6;
+      margin: 15px auto;
+    }
+  }
+  
+  .best-sellers {
+    padding: 20px 5%;
+    
+    ion-grid {
+      padding: 0;
+      
+      ion-row {
+        justify-content: center;
+        
+        ion-col {
+          padding: 10px;
+          
+          ion-card {
+            margin: 0;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            
+            &:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            ion-img {
+              height: 200px;
+              object-fit: cover;
+            }
+            
+            ion-card-header {
+              padding: 16px 10px;
+              
+              ion-card-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #333;
+              }
+              
+              ion-card-subtitle {
+                color: #e0c9a6;
+                font-weight: 600;
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  ion-card {
+    margin: 40px 10%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    
+    ion-card-header {
+      padding: 20px 20px 10px;
+      
+      ion-card-title {
+        font-family: 'Playfair Display', serif;
+        color: #333;
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+    
+    ion-card-content {
+      padding: 10px 20px 20px;
+      color: #666;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+  }
+  
+  .contact-us {
+    padding: 0 10% 40px;
+    
+    ion-card {
+      ion-card-header {
+        ion-card-title {
+          color: #333;
+        }
+      }
+      
+      ion-card-content {
+        text-align: left;
+        
+        p {
+          margin-bottom: 10px;
+          
+          strong {
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+  
+  .footer {
+    background: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 768px) {
+  ion-header {
+    ion-toolbar {
+      .brand-name {
+        font-size: 1.2rem;
+      }
+      
+      .menu-links {
+        display: none;
+      }
+    }
+  }
+  
+  ion-content {
+    .hero {
+      height: 50vh;
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    
+    ion-card {
+      margin: 30px 5%;
+    }
+    
+    .best-sellers {
+      ion-grid {
+        ion-row {
+          ion-col {
+            size: 12;
+            
+          }
+        }
+      }
+    }
+  }
+}
