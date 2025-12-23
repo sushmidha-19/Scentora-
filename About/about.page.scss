@@ -1,0 +1,131 @@
+/* About Page Styling - Dark Theme */
+ion-header {
+  ion-toolbar {
+    --background: #121212; /* Darker header */
+    --color: #ffffff;
+    padding: 0 16px;
+    
+    .logo-group {
+      display: flex;
+      align-items: center;
+      
+      .header-logo {
+        height: 40px;
+        margin-right: 12px;
+      }
+      
+      .brand-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e0c9a6;
+        letter-spacing: 1px;
+      }
+    }
+    
+    ion-button {
+      --color: #ffffff;
+      --border-color: #e0c9a6;
+      --background-activated: rgba(224, 201, 166, 0.2);
+      --background-hover: rgba(224, 201, 166, 0.1);
+      --border-radius: 20px;
+      font-weight: 500;
+      
+      &:hover {
+        --color: #e0c9a6;
+      }
+    }
+  }
+}
+
+.about-content {
+  --background: #1a1a1a; /* Dark background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  
+  .about-box {
+    background: rgba(30, 30, 30, 0.9); /* Semi-transparent dark */
+    border-radius: 16px;
+    padding: 40px;
+    max-width: 800px;
+    margin: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(224, 201, 166, 0.1); /* Gold accent border */
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #e0c9a6; /* Gold heading */
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      position: relative;
+      text-align: center;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 2px;
+        background: #e0c9a6;
+        margin: 15px auto 25px;
+        opacity: 0.7;
+      }
+    }
+    
+    p {
+      color: #e0e0e0; /* Light gray text */
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      
+      strong {
+        color: #ffffff; /* White for emphasis */
+        font-weight: 600;
+      }
+    }
+    
+    .signature {
+      font-family: 'Playfair Display', serif;
+      color: #e0c9a6;
+      font-size: 1.3rem;
+      text-align: right;
+      margin-top: 30px;
+      font-style: italic;
+      opacity: 0.9;
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    .about-box {
+      margin: 20px;
+      padding: 30px;
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    .about-box {
+      margin: 15px;
+      padding: 25px 20px;
+      border-radius: 8px;
+      
+      h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
