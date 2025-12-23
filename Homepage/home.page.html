@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <div class="logo-group">
+      <img src="assets/images/Logo.png" class="header-logo" />
+      <span class="brand-name">Scentora</span>
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-button fill="outline" routerLink="/login" class="login-btn">Login</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="home-content" fullscreen>
+
+  <!-- Hero Banner -->
+  <div class="hero-section">
+    <h1>Welcome to Scentora</h1>
+    <p>Crafting elegance through fragrance</p>
+  </div>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <ion-label>Filter by Category</ion-label>
+    <ion-segment [(ngModel)]="selectedCategory" (ionChange)="filterProducts()">
+      <ion-segment-button value="all">All</ion-segment-button>
+      <ion-segment-button value="Men">Men</ion-segment-button>
+      <ion-segment-button value="Women">Women</ion-segment-button>
+      <ion-segment-button value="Unisex">Unisex</ion-segment-button>
+      <ion-segment-button value="Luxury">Luxury</ion-segment-button>
+    </ion-segment>
+  </section>
+  <!-- User Orders Section -->
+<ion-card *ngIf="orders.length > 0">
+  <ion-card-header>
+    <ion-card-title>Your Orders</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let order of orders">
+        <ion-label>
+          <h2>{{ order.product_name }}</h2>
+          <p>Price: ₹{{ order.product_price }}</p>
+          <p>Quantity: {{ order.quantity }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+<ion-label *ngIf="orders.length === 0">
+  No orders found for your email.
+</ion-label>
+
+
+<ion-card *ngIf="orders.length === 0">
+  <ion-card-content>
+    <p>You have no orders yet.</p>
+  </ion-card-content>
+</ion-card>
+
+
+
+
+  <!-- Product Grid -->
+  <section class="filtered-products">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="3" *ngFor="let p of filteredProducts">
+          <ion-card [routerLink]="['/details']" [state]="{ product: p }">
+
+
+    <ion-img [src]="p.image"></ion-img>
+    <ion-card-header>
+      <ion-card-title>{{ p.name }}</ion-card-title>
+      <ion-card-subtitle>₹{{ p.price }}</ion-card-subtitle>
+    </ion-card-header>
+  </ion-card>
+</ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </section>
+
+</ion-content>
