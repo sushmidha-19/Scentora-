@@ -1,0 +1,202 @@
+/* Product Details Page - Split Layout */
+ion-header {
+  ion-toolbar {
+    --background: #1a1a1a;
+    --color: #ffffff;
+    padding: 0 16px;
+    
+    .logo-group {
+      display: flex;
+      align-items: center;
+      
+      .header-logo {
+        height: 40px;
+        margin-right: 12px;
+      }
+      
+      .brand-name {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #e0c9a6;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.details-content {
+  --background: #f9f5f0;
+  --padding-top: 20px;
+  --padding-bottom: 20px;
+  
+  .details-box {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    min-height: 600px;
+    
+    .product-details {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+      .product-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.2rem;
+        color: #ffffff;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+      
+      .product-price {
+        font-size: 1.8rem;
+        color: #e0c9a6;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      
+      .product-description {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+    }
+    
+    .product-image-container {
+      flex: 1;
+      background: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      
+      .product-image {
+        max-width: 100%;
+        max-height: 500px;
+        object-fit: contain;
+        border-radius: 8px;
+      }
+    }
+    
+    .form-section {
+      margin-top: 40px;
+      
+      .form-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.5rem;
+        color: #1a1a1a;
+        margin-bottom: 20px;
+        font-weight: 500;
+      }
+      
+      ion-item {
+        --border-color: #e0e0e0;
+        --highlight-color-focused: #e0c9a6;
+        --highlight-color-valid: #e0c9a6;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        
+        ion-label {
+          color: #666;
+          font-size: 0.95rem;
+        }
+        
+        ion-input, ion-textarea {
+          --padding-top: 16px;
+          --padding-bottom: 8px;
+        }
+      }
+      
+      .order-btn {
+        --background: #1a1a1a;
+        --background-activated: #2c2c2c;
+        --background-hover: #2c2c2c;
+        --border-radius: 8px;
+        --padding-top: 25px;
+        --padding-bottom: 25px;
+        --color: #ffffff;
+        margin-top: 20px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        
+        &:hover {
+          --background: #2c2c2c;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .details-content {
+    .details-box {
+      flex-direction: column-reverse;
+      min-height: auto;
+      
+      .product-details {
+        padding: 30px;
+      }
+      
+      .product-image-container {
+        padding: 30px;
+        
+        .product-image {
+          max-height: 400px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .details-content {
+    --padding-top: 0;
+    --padding-bottom: 0;
+    
+    .details-box {
+      border-radius: 0;
+      
+      .product-details {
+        padding: 20px;
+        
+        .product-title {
+          font-size: 1.8rem;
+        }
+        
+        .product-price {
+          font-size: 1.5rem;
+        margin-bottom: 20px;
+        }
+      }
+      
+      .product-image-container {
+        padding: 20px;
+        
+        .product-image {
+          max-height: 300px;
+        }
+      }
+      
+      .form-section {
+        margin-top: 30px;
+        
+        .form-title {
+          font-size: 1.3rem;
+        }
+        
+        .order-btn {
+          --padding-top: 20px;
+          --padding-bottom: 20px;
+        }
+      }
+    }
+  }
+}
