@@ -1,0 +1,129 @@
+/* Signup Page Styling - Matching Login Page with Logo */
+ion-header {
+  ion-toolbar {
+    --background: #1a1a1a;
+    --color: #ffffff;
+    
+    ion-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      padding-inline: 0;
+    }
+  }
+}
+
+ion-content {
+  --background: #f9f5f0; /* Matching soft beige background */
+  
+  .signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 20px;
+    
+    .signup-box {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 25px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      
+      .signup-logo {
+        height: 70px;
+        margin-bottom: 20px;
+      }
+      
+      .signup-heading {
+        font-family: 'Playfair Display', serif;
+        color: #1a1a1a;
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+      
+      .signup-subtext {
+        color: #666;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+      }
+      
+      ion-item {
+        --border-color: #ddd;
+        --highlight-color-focused: #e0c9a6;
+        --highlight-color-valid: #e0c9a6;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        
+        ion-label {
+          color: #666;
+          font-size: 0.95rem;
+        }
+        
+        ion-input {
+          --padding-top: 16px;
+          --padding-bottom: 8px;
+        }
+      }
+      
+      ion-button {
+        &[expand="block"] {
+          --border-radius: 8px;
+          height: 50px;
+          font-weight: 500;
+          letter-spacing: 0.5px;
+          margin-top: 10px;
+          
+          &:not([fill="clear"]) {
+            --background: #1a1a1a;
+            --background-activated: #2c2c2c;
+            --background-hover: #2c2c2c;
+            
+            &:hover {
+              --background: #2c2c2c;
+            }
+          }
+          
+          &[fill="clear"] {
+            --color: #666;
+            --color-activated: #1a1a1a;
+            --color-hover: #1a1a1a;
+            font-size: 0.9rem;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  ion-content {
+    .signup-wrapper {
+      padding: 15px;
+      
+      .signup-box {
+        padding: 25px 20px;
+        
+        .signup-heading {
+          font-size: 1.5rem;
+        }
+        
+        .signup-logo {
+          height: 60px;
+        }
+        
+        ion-button {
+          &[expand="block"] {
+            height: 45px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="signup-wrapper">
+    <div class="signup-box">
+      <!-- Logo -->
+      <img src="assets/images/Logo.png" class="signup-logo" alt="Scentora Logo">
+
+      <h2 class="signup-heading">Create Your Account</h2>
+      <p class="signup-subtext">Join Scentora to explore our fragrances</p>
+
+      <!-- Full Name -->
+      <ion-item>
+        <ion-label position="floating">Full Name</ion-label>
+        <ion-input type="text" [(ngModel)]="username"></ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <!-- Password -->
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <!-- Sign Up button calls signup() -->
+      <ion-button expand="block" (click)="signup()">
+        Sign Up
+      </ion-button>
+
+      <!-- Navigation to login -->
+      <ion-button expand="block" fill="clear" routerLink="/login">
+        Already have an account? Login
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
