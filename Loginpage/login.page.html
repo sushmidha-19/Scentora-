@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title class="ion-text-center">Login to Scentora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <div class="login-wrapper"> <!-- FLEX container -->
+    <div class="login-box">
+      <img src="assets/images/Logo.png" class="login-logo" alt="Scentora Logo" />
+
+      <h2 class="login-heading">Welcome Back</h2>
+      <p class="login-subtext">Please sign in to continue</p>
+
+      <ion-item class="login-item">
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email"></ion-input>
+      </ion-item>
+
+      <ion-item class="login-item">
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-button expand="block" class="login-btn" (click)="login()">Login</ion-button>
+
+      <ion-button fill="clear" expand="block" class="signup-link" routerLink="/signup">
+        Don't have an account? Sign Up
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
