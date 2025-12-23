@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Order Confirmation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="confirmation-wrapper">
+    <div class="confirmation-card">
+      <ion-icon name="checkmark-circle" class="success-icon"></ion-icon>
+      
+      <h2>Order Confirmed!</h2>
+      
+      <div class="order-details" *ngIf="order">
+        <p><strong>Product:</strong> {{ order.product_name }}</p>
+        <p><strong>Price:</strong> ₹{{ order.product_price }}</p>
+        <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+        <p><strong>Name:</strong> {{ order.name }}</p>
+        <p><strong>Address:</strong> {{ order.address }}</p>
+      </div>
+      
+      <ion-button expand="block" (click)="goHome()">
+        Back to Home
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
